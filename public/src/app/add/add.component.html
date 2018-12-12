@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ 
+
+</head> 
+<body>
+    <div class="container">
+      <div class="card bg-light width:300px;">
+        <div class="card-body text-center">
+
+          <a [routerLink]="['/home']">Home</a>
+          <h2 class="card-title">Create new product:</h2>
+          
+          <form (submit)="createProd()" class="form-group" style="width:300px">
+            <p *ngIf="title.errors"><span style="color:red">Title must be 4 characters long.</span> </p>
+          <label>Title:</label>
+            <input
+            class="form-control"
+            type="text" 
+            name="product.title"
+            required
+            minlength="4"
+            maxlength="20"
+            [(ngModel)]="product.title"
+            #title="ngModel"/> 
+              
+            <label>Price:</label>
+            <input name="product.price" [(ngModel)]="product.price"  id="price" class="form-control">
+            <label for="image">ImageUrl:</label>
+            <input name="product.productImage" [(ngModel)]="product.productImage" type="text" id="image" class="form-control"><hr>
+            <input type="submit" class="btn btn-outline-primary">
+            <button [routerLink]="['/home']" class="btn btn-outline-danger ml-2">Cancel</button>
+            <!-- <input (click)="createAu($event)" type="submit" value="Submit" class="btn"> -->
+            <br> 
+            <small *ngIf="flash.title"><span style="color:red">{{ flash.title.message }}</span></small> <br>
+              <small *ngIf="flash.price"><span style="color:red">{{ flash.price.message }}</span></small> <br>
+              <small *ngIf="flash.productImage"><span style="color:red">{{ flash.productImage.message }}</span></small> 
+            </form>
+          </div>
+        </div>
+    </div>
+</body>
+<!-- </html> -->

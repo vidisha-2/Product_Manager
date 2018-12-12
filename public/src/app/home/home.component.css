@@ -1,0 +1,10 @@
+.container{
+    padding:20px;
+    width:350px;
+    height:250px;
+    margin: 15px 282px;
+    display:inline-block;
+    /* border: 2px solid black;  */
+    /* margin-left: 300px;   */
+    margin-top: 40px;
+}

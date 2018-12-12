@@ -1,0 +1,23 @@
+
+<a [routerLink]="['/home']">Home</a>
+<p>Edit this product:</p>
+
+<form (submit)="editProduct()" class="form-group">
+  {{ product | json }}
+  <label for="title">Title:</label>
+  <input name="product.title" [(ngModel)]="product.title" type="text" id="title" class="form-control">
+
+  <label for="price">Price:</label>
+  <input name="product.price" [(ngModel)]="product.price"  id="price" class="form-control">
+
+  <label for="image">ImageUrl:</label>
+  <input name="product.productImage" [(ngModel)]="product.productImage" type="text" id="image" class="form-control">
+  
+  <input type="submit" class="btn">
+  <button (click)="deleteProduct()" class="btn">Delete</button>
+  <!-- <input (click)="createAu($event)" type="submit" value="Submit" class="btn"> -->
+  <!-- <br> -->
+  <small *ngIf="flash.title"><span style="color:red">{{ flash.title.message }}</span></small> <br>
+  <small *ngIf="flash.price"><span style="color:red">{{ flash.price.message }}</span></small> <br>
+   <small *ngIf="flash.productImage"><span style="color:red">{{ flash.productImage.message }}</span></small> 
+</form>

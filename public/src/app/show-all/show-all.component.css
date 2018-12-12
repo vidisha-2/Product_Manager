@@ -1,0 +1,26 @@
+.container{
+    padding:40px;
+    width:800px;
+    height:650px;
+    margin-left:40px;
+    /* margin: 0 auto; */
+    display:inline-block;
+    /* border: 2px solid black;  */
+    /* margin-left: 300px;    */
+    border-radius:20px;
+  }
+  img{
+    width:125px;
+    height:150px;
+    margin-top:20px;
+  }
+  .box {
+    margin-top:5px;
+    border: 2px solid #CDDC39;
+    border-radius:20px;
+    display:inline-block;
+    height:250px;
+    width:200px;
+    margin:5px; 
+    vertical-align: top;
+  }
