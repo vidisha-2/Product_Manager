@@ -7,7 +7,6 @@ module.exports ={
         .catch(errs=>console.log("Errors in finding", errs)||res.json(errs))
     },
     createProduct: function(req, res){
-     
         Product.create(req.body)
         .then(data=>console.log("Created", data)||res.json(data))
         .catch(errs=>console.log("Error in creating",errs)||res.json(errs))
